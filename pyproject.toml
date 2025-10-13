@@ -1,0 +1,31 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "itflow-api"
+version = "0.1.0"
+description = "Simplified, typed Python wrapper for the ITFlow v1 API (requests-based)"
+readme = "README.md"
+authors = [{ name = "Ambulant Solutions Ltd." }]
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.6"
+dependencies = [
+"requests>=2.32.5"
+]
+
+
+[project.urls]
+Homepage = "https://www.ambulantsolutions.co.uk/"
+Source = "https://github.com/Ambulant-Solutions/itflow-api"
+
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["itflow_api*"]
