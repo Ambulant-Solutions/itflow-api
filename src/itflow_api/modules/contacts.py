@@ -1,5 +1,5 @@
-from itflow_api.models import Result, Client, Contact
-from itflow_api.exceptions import ITFlowApiException
+from ..models import Contact
+from ..exceptions import ITFlowApiException
 from typing import List
 
 class ContactsModule:

@@ -1,5 +1,5 @@
-from itflow_api.models import Result, Client
-from itflow_api.exceptions import ITFlowApiException
+from ..models import Result, Client
+from ..exceptions import ITFlowApiException
 from typing import List
 
 class AssetsModule:

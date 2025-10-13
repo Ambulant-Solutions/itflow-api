@@ -1,12 +1,12 @@
 import logging
-from itflow_api.rest_adapter import RestAdapter
-from itflow_api.exceptions import ITFlowApiException
-from itflow_api.modules.clients import ClientsModule
-from itflow_api.modules.contacts import ContactsModule
-from itflow_api.modules.assets import AssetsModule
-from itflow_api.modules.certificates import CertificatesModule
-from itflow_api.modules.credentials import CredentialsModule
-from itflow_api.modules.documents import DocumentsModule
+from .rest_adapter import RestAdapter
+from .exceptions import ITFlowApiException
+from .modules.clients import ClientsModule
+from .modules.contacts import ContactsModule
+from .modules.assets import AssetsModule
+from .modules.certificates import CertificatesModule
+from .modules.credentials import CredentialsModule
+from .modules.documents import DocumentsModule
 
 class ITFlowApi:
     def __init__(self, hostname: str, api_key: str, ver: str = 'v1', ssl_verify: bool = True, logger: logging.Logger = None):

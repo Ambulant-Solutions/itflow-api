@@ -1,5 +1,5 @@
-from itflow_api.models import Client
-from itflow_api.exceptions import ITFlowApiException
+from ..models import Client
+from ..exceptions import ITFlowApiException
 from typing import List
 
 class DomainsModule:

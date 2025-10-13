@@ -1,8 +1,8 @@
 import requests
 import requests.packages
 from typing import List, Dict
-from itflow_api.exceptions import ITFlowApiException
-from itflow_api.models import Result
+from .exceptions import ITFlowApiException
+from .models import Result
 from json import JSONDecodeError
 import logging
 
