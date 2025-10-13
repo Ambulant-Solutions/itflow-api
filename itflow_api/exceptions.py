@@ -1,0 +1,2 @@
+class ITFlowApiException(Exception):
+    pass
