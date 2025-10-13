@@ -1,6 +1,43 @@
-from ..models import Client
 from ..exceptions import ITFlowApiException
-from typing import List
+from typing import List, Optional
+from datetime import datetime
+
+class Client:
+    client_id: Optional[int]
+    client_lead: Optional[int]
+    client_name: Optional[str]
+    client_type: Optional[str]
+    client_website: Optional[str]
+    client_referral: Optional[str]
+    client_rate: Optional[str]
+    client_currency_code: Optional[str]
+    client_net_terms: Optional[int]
+    client_tax_id_number: Optional[str]
+    client_abbreviation: Optional[str]
+    client_notes: Optional[str]
+    client_created_at: Optional[datetime]
+    client_updated_at: Optional[datetime]
+    client_archived_at: None
+    client_accessed_at: Optional[datetime]
+
+    def __init__(self, client_id: Optional[int], client_lead: Optional[int], client_name: Optional[str], client_type: Optional[str], client_website: Optional[str], client_referral: Optional[str], client_rate: Optional[str], client_currency_code: Optional[str], client_net_terms: Optional[int], client_tax_id_number: Optional[str], client_abbreviation: Optional[str], client_notes: Optional[str], client_created_at: Optional[datetime], client_updated_at: Optional[datetime], client_archived_at: None, client_accessed_at: Optional[datetime], **kwargs) -> None:
+        self.client_id = client_id
+        self.client_lead = client_lead
+        self.client_name = client_name
+        self.client_type = client_type
+        self.client_website = client_website
+        self.client_referral = client_referral
+        self.client_rate = client_rate
+        self.client_currency_code = client_currency_code
+        self.client_net_terms = client_net_terms
+        self.client_tax_id_number = client_tax_id_number
+        self.client_abbreviation = client_abbreviation
+        self.client_notes = client_notes
+        self.client_created_at = client_created_at
+        self.client_updated_at = client_updated_at
+        self.client_archived_at = client_archived_at
+        self.client_accessed_at = client_accessed_at
+        self.__dict__.update(kwargs)
 
 class ClientsModule:
     def __init__(self, rest_adapter):
