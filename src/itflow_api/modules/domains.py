@@ -52,7 +52,7 @@ class DomainsModule:
     def __init__(self, rest_adapter):
         self._rest_adapter = rest_adapter
 
-    def get_all_domains(self) -> List[Client]:
+    def get_all_domains(self) -> List[Domain]:
         """
         Fetch all domains from the IT Flow instance.
         :return: List object containing a list of Domain objects
@@ -64,3 +64,29 @@ class DomainsModule:
             return domains
         
         raise ITFlowApiException(f"Failed to fetch domains: {result.status_code} - {result.message}")
+    
+    def get_domain_by_id(self, domain_id: int) -> Domain:
+        """
+        Fetch a single domain by its ID.
+        :param domain_id: The ID of the domain to fetch.
+        :return: Domain object
+        """
+        result = self._rest_adapter.get('clients', ep_params={'domain_id': domain_id})
+
+        if result.status_code == 200 and result.data:
+            return Domain(**result.data[0])
+        
+        raise ITFlowApiException(f"Failed to fetch domain with ID {domain_id}: {result.status_code} - {result.message}")
+    
+    def get_domain_by_name(self, domain_name: str) -> Domain:
+        """
+        Fetch a single domain by its name.
+        :param domain_name: The fully qualified domain name of the domain to fetch.
+        :return: Domain object
+        """
+        result = self._rest_adapter.get('clients', ep_params={'domain_name': domain_name})
+
+        if result.status_code == 200 and result.data:
+            return Domain(**result.data[0])
+        
+        raise ITFlowApiException(f"Failed to fetch domain with name {domain_name}: {result.status_code} - {result.message}")
