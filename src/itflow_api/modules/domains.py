@@ -17,8 +17,8 @@ class Domain:
     domain_notes: Optional[str]
     domain_created_at: Optional[datetime]
     domain_updated_at: Optional[datetime]
-    domain_archived_at: None
-    domain_accessed_at: None
+    domain_archived_at: Optional[datetime]
+    domain_accessed_at: Optional[datetime]
     domain_registrar: Optional[int]
     domain_webhost: Optional[int]
     domain_dnshost: Optional[int]
