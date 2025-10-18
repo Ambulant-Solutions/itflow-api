@@ -119,5 +119,5 @@ class ClientsModule:
         raise ITFlowApiException(f"Failed to delete client with ID {client_id}: {result.status_code} - {result.message}")
     
     def contacts(self):
-        result = ContactsModule.get_contact_by_client(self.client_id)
+        result = ContactsModule.get_contacts_by_client(self.client_id)
         return result

@@ -82,7 +82,7 @@ class ContactsModule:
         
         raise ITFlowApiException(f"Failed to fetch contact with ID {contact_id}: {result.status_code} - {result.message}")
     
-    def get_contact_by_client(self, client_id: int) -> List[Contact]:
+    def get_contacts_by_client(self, client_id: int) -> List[Contact]:
         """
         Fetch contacts by client ID.
         :param client_id: The ID of the client to fetch contacts for.
